@@ -1,0 +1,36 @@
+<html>
+  <head>
+  </head>
+
+  <body>
+
+    <form action="/node" method="post">
+
+      <input name="name" placeholder="name">
+      <input name="rType" placeholder="rType">
+      <input name="status" placeholder="status">
+      <input name="owner" placeholder="owner">
+      <input name="location" placeholder="lat,lon">
+      <input type="submit">
+
+    </form>
+    <form action="/routegenerator" method="post">
+        <label>from:</label>
+        <select name="from">
+          {% for n in nodes %}
+            <option>{{n.name}}</option>
+          {% endfor %}
+        </select>
+        <label>to:</label>
+        <select name="to">
+          {% for n in nodes %}
+            <option>{{n.name}}</option>
+          {% endfor %}
+        </select>
+        <input type="submit">
+
+    </form>
+  </body>
+
+
+</html>

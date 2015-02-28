@@ -29,7 +29,7 @@ class MeetingPts(Renderer):
         meetpts = MeetingPt.query()
 
         self.render('index.html', message = meetPt.name + " saved succesfully" )
-        
+
     def get(self, meetptname ):
         if meetptname == '*':
             result = {'meetingpoints':[]}
@@ -153,3 +153,64 @@ class EvacuationRoutes(Renderer):
 
         self.response.headers['Content-Type'] = 'application/json'
         self.response.write( json.encode(result) )
+
+
+
+
+########################################## DERVS PROTOCOL ###############################
+
+
+
+
+class NodeGenerator(Renderer):
+    def post(self):
+        node = Node()
+
+        node.name = self.request.get('name')
+        node.rType = self.request.get('rType')
+
+
+        node.owner = self.request.get('owner')
+
+
+        node.status = self.request.get('status')
+
+        node.location = ndb.GeoPt(self.request.get('location'))
+
+        node.put()
+
+        self.redirect('/')
+
+class RouteGeneretor(Renderer):
+    def post(self):
+        route2 = Path() # we create 2 new void routes
+        route1 = Path()
+        n1 = self.request.get('from') # name of the first node
+        n2 = self.request.get('to') # name of the second node
+
+        owner_key = self.request.get('key')
+
+        n1 = Node.query( Node.name == n1 ).get()
+        n2 = Node.query( Node.name == n2 ).get()
+
+        route1.root = n1.key
+        route2.root = n2.key
+
+        route2.dest = n1.key
+        route1.dest = n2.key
+
+        route1.name = n1.name+"-"+n2.name
+        route2.name = n2.name+"-"+n1.name
+
+        lat1 = float(str(n1.location).split(',')[0])
+        lat2 = float(str(n2.location).split(',')[0])
+        lon1 = float(str(n1.location).split(',')[1])
+        lon2 = float(str(n2.location).split(',')[1])
+        dist = getGeoDistance(lat1,lon1,lat2,lon2)
+
+        route1.distance = dist * 1000
+        route2.distance = dist * 1000
+
+        route1.put()
+        route2.put()
+        self.redirect('/')

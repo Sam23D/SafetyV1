@@ -5,9 +5,8 @@ from controlers import *
 class MainHandler(Renderer):
     def get(self):
 
-        volcanoes = Volcano.query()
-        meetpts = MeetingPt.query()
-        self.render('index.html', message = "todo bien", meetpts = meetpts)
+        nodes = Node.query()
+        self.render('dervscreator.html', message = "todo bien", nodes = nodes)
 
 app = webapp2.WSGIApplication([
     ('/volcanoes',Volcanoes),
@@ -18,5 +17,7 @@ app = webapp2.WSGIApplication([
     ('/msg/(.*)',Messages),
     ('/meetpt/(.*)',MeetingPts),
     ('/evaRoute/(.*)',EvacuationRoutes),
-    ('/', MainHandler)
+    ('/', MainHandler),
+    ('/node',NodeGenerator),
+    ('/routegenerator',RouteGeneretor)
 ], debug=True)
