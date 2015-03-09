@@ -149,7 +149,7 @@ class EvacuationRoutes(Renderer):
                 shortestDistance = edistance
                 result = e
 
-        result = {'name':result.name ,'meetPt':result.meetPt , 'route': result.jsonRouteArray.split(';'),'origin': str(result.origin)}
+        result = {'name':result.name ,'meetPt':result.meetPt ,'route': result.jsonRouteArray.split(';'),'origin': str(result.origin)}
 
         self.response.headers['Content-Type'] = 'application/json'
         self.response.write( json.encode(result) )
@@ -160,26 +160,58 @@ class EvacuationRoutes(Renderer):
 ########################################## DERVS PROTOCOL ###############################
 
 
+class GetRoute(Renderer):
+    def get(self, latlon):
+        latlon = latlon.split('_')
+        myLat = float(latlon[0])
+        myLon = float(latlon[1])
+        shortestDistance = 21000#reference of the earths half circunference
 
+
+class MBuildingGenerator(Renderer):
+    def post(self):
+        pass
 
 class NodeGenerator(Renderer):
     def post(self):
         node = Node()
 
         node.name = self.request.get('name')
-        node.rType = self.request.get('rType')
+        node.rType = self.request.get('rType').lower()
 
+        ownerVal = self.request.get('owner')
+        if ownerVal:
+            node.owner = self.request.get('owner')
+        else:
+            node.owner = "public domain"
 
-        node.owner = self.request.get('owner')
-
-
-        node.status = self.request.get('status')
+        node.status = "Fine"
 
         node.location = ndb.GeoPt(self.request.get('location'))
 
         node.put()
 
         self.redirect('/')
+
+    def get(self, owner):
+        result = {'nodes': []}
+
+        nodes = Node.query( Node.owner == owner )
+
+
+        for n in nodes:
+            x = {}
+            x['key'] = str(n.key.urlsafe())
+            x['name'] = n.name
+            x['rType'] = n.rType
+            x['owner'] = n.owner
+            x['status'] = n.status
+            x['location'] = str(n.location)
+            result['nodes'].append(x)
+
+        self.response.headers['Content-Type'] = 'application/json'
+
+        self.response.write( json.encode(result) )
 
 class RouteGeneretor(Renderer):
     def post(self):
@@ -214,3 +246,34 @@ class RouteGeneretor(Renderer):
         route1.put()
         route2.put()
         self.redirect('/')
+    def get(self , owner):
+        nodes = Node.query( Node.owner == owner )
+        paths = []
+        for n in nodes:
+            pathsQuery = Path.query( Path.root == n.key )
+            for p in pathsQuery:
+                paths.append( { 'name': p.name ,'root': str(n.location), 'dest': str(p.dest.get().location)  ,   } )
+        result = { 'name': owner+"'s evacuation Route" , 'path': paths }
+        self.response.headers['Content-Type'] = 'application/json'
+
+        self.response.write( json.encode(result) )
+
+class globalDeleter(Renderer):
+    def get(self, key):
+        obj = ndb.Key( urlsafe = key )
+        if( str(obj.kind()) == "Node" ):
+            paths = Path.query(Path.root == obj)
+            topaths = Path.query(Path.dest == obj)
+            for p in paths:
+                self.response.write( p.name )
+                result = p.name
+                p.key.delete()
+            for p in topaths:
+                self.response.write( p.name )
+                result = p.name
+                p.key.delete()
+
+
+        obj.delete()
+
+        self.response.write( key + " and al his dependents have been deleted" )

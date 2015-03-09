@@ -33,12 +33,19 @@ class EvacuationRoute(ndb.Model):
 
 class Node(ndb.Model):
     name = ndb.StringProperty() # uniqe name in the owner
-    rType = ndb.StringProperty() # node or safezone
+    rType = ndb.StringProperty() # node or meetpt
     #owner = ndb.KeyProperty() # key of the industrie or location for the node (CentralHospital's KEY, Harvard's KEY )
     owner = ndb.StringProperty()
     status = ndb.StringProperty() # status of the route node fine or blocked
 
     location = ndb.GeoPtProperty() # geo location of the node
+
+class MainBuilding(ndb.Model): # this class wil be uses to refer to industries, schools, hospitals etc...
+    name = ndb.StringProperty()
+    desc = ndb.StringProperty()
+    path = ndb.StringProperty()# this path is the list of al the GeoPts that delimits the Building area
+
+
 
 class Path(ndb.Model):
     name = ndb.StringProperty() # paths name concatenation of root's name + " - " + destination's name
