@@ -1,0 +1,76 @@
+/*------------------------------------------------------ REAL SHIT STARTS HERE ---------------------------------------------------------*/
+h1{
+	color: white;
+	amargin: auto;
+}
+/*---------- GENERAL --------*/
+body {
+	background-image: url("/img/texture.jpg")
+}
+/* --------- CLASSES --------*/
+.message{
+	margin: auto;
+}
+.labels {
+   color: red;
+   background-color: white;
+   font-family: "Lucida Grande", "Arial", sans-serif;
+   font-size: 10px;
+   font-weight: bold;
+   text-align: center;
+   width: 60px;
+   border: 2px solid black;
+   white-space: nowrap;
+ }
+
+.maincontainer{
+
+	height: 100% ;
+	background-image: url("/img/chicago.jpg");
+	padding: 0;
+	align:center;
+
+}
+.opacity{
+	margin-top: 3em;
+	background-color: rgba(255,255,255,.15);
+	width: 100%;
+}
+.page{
+
+	padding: 1em;
+
+}
+.info{
+	color: #e74c3c;
+	font-weight: bold;
+}
+.name{
+	color:#34495e;
+	font-size:16;
+	font-weight:bold;
+	align: center;
+}
+.shadowed{
+	padding: 2em;
+	background-color:white;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.35);
+}
+.ex{
+	color:#34495e;
+	font-size: 16;
+	margin-left: 3em;
+}
+.safety{
+	background-color: rgba(255,255,255,.7);
+}
+.dervslogo{
+	margin: 5em 0em 0em 0em;
+}
+.footer{
+	position:absolute;
+	bottom:5 em;
+
+}
+
+/* ----------   ID'S --------*/
