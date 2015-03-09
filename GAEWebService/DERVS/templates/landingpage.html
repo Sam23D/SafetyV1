@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <link href="css/foundation.min.css" media="screen" rel="stylesheet" type="text/css" >
+    <link href="css/stylesheet.css" media="screen" rel="stylesheet" type="text/css" >
+    <script src="js/javascript.js" ></script>
+    <script src="js/vendor/jquery.js" ></script>
+    <script src="js/foundation.min.js" ></script>
+  </head>
+
+  <body>
+
+    <div class="small-12 columns maincontainer">
+      <div class="opacity">
+        <div class="small-5 small-centered columns">
+
+          <img class="dervslogo" src="/img/dervs.png">
+
+        </div>
+        <div class=" small-3 columns small-centered ">
+          <img src="/img/urbancities.png">
+
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="small-12 columns page">
+        <div class="small-4 columns small-centered"><img src="/img/dervsteam.png"></div>
+        <hr>
+        <div class="small-4 columns"><img src="/img/samy.png"><p class="name">Samuel Blanco</p></div>
+        <div class="small-4 columns"><img src="/img/erick.png"><p class="name">Erick Alcantar</p></div>
+        <div class="small-4 columns"><img src="/img/vic.png"><p class="name">Victor Espinoza</p></div>
+        <div class="small-4 small-offset-2 columns"><img src="/img/dave.png"><p class="name">David Saenz</p></div>
+        <div class="small-4 columns end"><img src="/img/rich.png"><p class="name">Ricardo Trevizo</p></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns page">
+        <div class="small-4 columns small-centered"><img src="/img/safety.png"></div>
+        <hr>
+        <div class="small-5 columns safety">
+          <h4>IOS App</h4>
+          <p>Safety is a small implementation that we created to show the potential that the portocol can achieve.</p>
+          <p>It tracks your location and gives you a smart and fast route to a safe place, the reach of the protocol can be
+          really big if implemented well, it also gives a good base for a better security implementation in industries and almost any place</p>
+        </div>
+        <div class="small-7 columns">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/26okZKgrbIU" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="small-12 row shadowed">
+      <div style=" background-color: #ecf0f1" class="small-centered small-12  columns">
+        <div>
+          <div  class="small-centered small-6 columns">
+            <h2  >Web Service API</h2>
+            <div class="small-2  columns">
+              <img src="/img/warning.png" >
+            </div>
+            <div class="small-10 columns">
+              <h6>This API is an early implementation, changes are still to be made</h6>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div clas="small-4 columns ">
+        <h3>Routes</h3>
+      </div>
+      <div clas="small-12 small-offset-3 columns">
+        <h5>GET</h5>
+        <label>to:</label><p class="ex">http://dervsprotocol.appspot.com/evaRoute/(latitude(double))_(longitude(double))</p>
+        <p>
+        This returns the closes Evacuation Route to the latitude and longitude specified in the URL, they must be separated by an underscore
+        </p>
+        <p>This will return a JSON object with two atributes, origin and route, origin has the GeoPt coordinates from where the route starts, and route is
+        a list of all the next GeoPts that defines de evacuation route</p>
+        Syntax:<br>
+        <p class="ex">{"origin":position(str),"route":[list of positions "lat, lon"(str)],"name":(str)}</p>
+        <p>This is an example of a real implementation of the method</p>
+        <p class="ex">{"origin":"28.673898,-106.079871","route":["28.673898,-106.079871","28.673896,-106.080159","28.674125,-106.080264","28.673987,-106.08071"],"name":"Entrada lateral"}
+        </p>
+        <hr>
+        <h3>Meeting Points</h3>
+        <h5>GET</h5> <p class="ex">'http://dervsprotocol.appspot.com/evaRoute/name(str)'</p>
+        <p>This will return a JSON object with two values, location wich has a string of the coordinates, and a specified name</p>
+        <p class="ex">{"location":"lat,lon"(str),"name":(str)}</p>
+        <p>This is an example of a real implementation of the method</p>
+        <p class="ex">{"location":"28.674295,-106.076957","name":"Gimnasio ITESM"}</p>
+        <p>If all Meeting points are required they can be retrieved by pasing an other value to the url, this value is prefered to be an asterisk</p>
+
+        <p class="ex">http://volcanoprevent.appspot.com/evaRoute/*</p>
+        <p>This is an example of a real implementation of the method</p>
+        <p class="ex">{"meetingpoints":[ list of all the meeting points {"name":(str),"location":"lat,lon"(str)},]}</p>
+        <p class="ex">
+        {"meetingpoints":[{"name":"lol","location":"28.674351,-106.075324"},{"name":"Zocalo","location":"0.0,0.0"},{"name":"hola","location":"18.57,-95.32"},{"name":"Gimnasio ITESM","location":"28.674295,-106.076957"}]}
+        </p>
+        <h3>Nodes</h3>
+        <h5>GET</h5> <p class="ex">'http://dervsprotocol.appspot.com/node/owner(str)''</p>
+        <p>To get nodes for a specifir building, industrie or owner, we will need to make a specific request, with the owners
+        unique identifier, this will retrieve al nodes for the a owner</p>
+        <p>This will return a JSON object with a list of nodes, wich will have the next properties <b> key, name, rType, owner, status and location</b>.</p>
+      </div>
+      <h3 class="info">Extra Info IMPORTANT</h3>
+          <p>All the post events are still in development, for security porpuses, as soon as they are finished documentation will be added, the only way to add them is with our administration portal. </p>
+          <p>If you want to addopt our early protocol please send us an email: <b>samuel.drach@gmail.com</b></p>
+
+
+    </div>
+
+
+  </body>
+
+</html>

@@ -7,6 +7,9 @@ class MainHandler(Renderer):
         paths = Path.query()
         nodes = Node.query()
         self.render('dervscreator.html', message = "todo bien", nodes = nodes)
+class LandingPage(Renderer):
+    def get(self):
+        self.render('landingpage.html')
 
 app = webapp2.WSGIApplication([
     ('/volcanoes',Volcanoes),
@@ -17,7 +20,7 @@ app = webapp2.WSGIApplication([
     ('/msg/(.*)',Messages),
     ('/meetpt/(.*)',MeetingPts),
     ('/evaRoute/(.*)',EvacuationRoutes),
-    ('/', MainHandler),
+    ('/', LandingPage),
     ('/node',NodeGenerator),
     ('/node/(.*)',NodeGenerator),
     ('/routegenerator',RouteGeneretor),
