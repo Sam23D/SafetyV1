@@ -24,11 +24,11 @@
     if ([disaster isEqualToString:@"Volcanoes"]) {
         if ([used isEqualToString:@"Plan"]) {
             gtitle.text = used;
-            des.text = @"Have a disaster plan. \n\nKnow whether or not you are at risk for danger. \n\nBe prepared for mudslides, flash floods, earthquakes, ash falling, acid rain and tsunamis. \n\nPrepare a disaster supplies kit for your home and car. \n\nKnow evacuation routes.";
+            des.text = @"Have a disaster plan. \n\nKnow whether or not you are at risk for danger. \n\nBe prepared for mudslides, flash floods, earthquakes, ash falling, acid rain and tsunamis. \n\nPrepare a disaster supplies kit for your home and car. Include a first aid kit, canned food and a can opener, bottled water, battery-operated radio, flashlight, protective clothing, dust mask, goggles and sturdy shoes. \n\nKnow evacuation routes.";
         }else{
             if ([used isEqualToString:@"During"]) {
                 gtitle.text = used;
-                des.text = @"Follow the evacuation order issued by authorities. \n\nAvoid areas downwind and river valleys downstream of the volcano. \n\nIf your caught indoors, close all windows and doors, put machinery inside a barn, and bring animals inside. \n\nIf you’re trapped outdoors, seek shelter indoors. \n\nProtect yourself when ash falls";
+                des.text = @"Follow the evacuation order issued by authorities. \n\nAvoid areas downwind and river valleys downstream of the volcano. \n\nIf your caught indoors, close all windows and doors, put machinery inside a barn, and bring animals inside. \n\nIf you’re trapped outdoors, seek shelter indoors. \n\nProtect yourself when ash falls. Wear long-sleeved shirts and long pants. Use goggles to protect your eyes. Wear a dust mask and keep car engines off.";
             }else{
                 if ([used isEqualToString:@"After"]) {
                     gtitle.text = used;
