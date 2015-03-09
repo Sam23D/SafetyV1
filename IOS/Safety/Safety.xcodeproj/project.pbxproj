@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D5B0C1C1AAD452D007382FC /* cracked2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5B0C1B1AAD452D007382FC /* cracked2.png */; };
+		2D5B0C1E1AAD4545007382FC /* mountain44.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5B0C1D1AAD4545007382FC /* mountain44.png */; };
+		2D5B0C201AAD455E007382FC /* volcano.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5B0C1F1AAD455E007382FC /* volcano.png */; };
+		2D5B0C221AAD45C0007382FC /* tsunami1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D5B0C211AAD45C0007382FC /* tsunami1.png */; };
+		2DE942A21AAD259E00964C87 /* manual.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE942A11AAD259E00964C87 /* manual.m */; };
+		2DE942A51AAD2E7500964C87 /* description.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE942A41AAD2E7500964C87 /* description.m */; };
 		A1C020E71AACFD21000DDCAF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C020E61AACFD21000DDCAF /* main.m */; };
 		A1C020EA1AACFD21000DDCAF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C020E91AACFD21000DDCAF /* AppDelegate.m */; };
 		A1C020ED1AACFD21000DDCAF /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1C020EC1AACFD21000DDCAF /* FirstViewController.m */; };
@@ -54,6 +60,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D5B0C1B1AAD452D007382FC /* cracked2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cracked2.png; sourceTree = "<group>"; };
+		2D5B0C1D1AAD4545007382FC /* mountain44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mountain44.png; sourceTree = "<group>"; };
+		2D5B0C1F1AAD455E007382FC /* volcano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volcano.png; sourceTree = "<group>"; };
+		2D5B0C211AAD45C0007382FC /* tsunami1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tsunami1.png; sourceTree = "<group>"; };
+		2DE942A01AAD259E00964C87 /* manual.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manual.h; sourceTree = "<group>"; };
+		2DE942A11AAD259E00964C87 /* manual.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = manual.m; sourceTree = "<group>"; };
+		2DE942A31AAD2E7500964C87 /* description.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = description.h; sourceTree = "<group>"; };
+		2DE942A41AAD2E7500964C87 /* description.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = description.m; sourceTree = "<group>"; };
 		A1C020E11AACFD21000DDCAF /* Safety.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Safety.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1C020E51AACFD21000DDCAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C020E61AACFD21000DDCAF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -174,6 +188,10 @@
 				A1C020F41AACFD21000DDCAF /* Images.xcassets */,
 				A1C020F61AACFD21000DDCAF /* LaunchScreen.xib */,
 				A1C020E41AACFD21000DDCAF /* Supporting Files */,
+				2DE942A01AAD259E00964C87 /* manual.h */,
+				2DE942A11AAD259E00964C87 /* manual.m */,
+				2DE942A31AAD2E7500964C87 /* description.h */,
+				2DE942A41AAD2E7500964C87 /* description.m */,
 			);
 			path = Safety;
 			sourceTree = "<group>";
@@ -207,6 +225,10 @@
 		A1C021291AAD0B68000DDCAF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2D5B0C211AAD45C0007382FC /* tsunami1.png */,
+				2D5B0C1F1AAD455E007382FC /* volcano.png */,
+				2D5B0C1D1AAD4545007382FC /* mountain44.png */,
+				2D5B0C1B1AAD452D007382FC /* cracked2.png */,
 				A1E28F441AAD176F00DC3238 /* LaunchImage.png */,
 				A1C0212A1AAD0B69000DDCAF /* 11015279_10152881654042713_1936764271_n.jpg */,
 				A1C0212B1AAD0B69000DDCAF /* guide64x64.png */,
@@ -306,7 +328,10 @@
 				A1E28F451AAD176F00DC3238 /* LaunchImage.png in Resources */,
 				A1C0213F1AAD0B69000DDCAF /* warning.png in Resources */,
 				A1C020F31AACFD21000DDCAF /* Main.storyboard in Resources */,
+				2D5B0C1C1AAD452D007382FC /* cracked2.png in Resources */,
+				2D5B0C1E1AAD4545007382FC /* mountain44.png in Resources */,
 				A1C021361AAD0B69000DDCAF /* guide64x64.png in Resources */,
+				2D5B0C201AAD455E007382FC /* volcano.png in Resources */,
 				A1C021391AAD0B69000DDCAF /* map64x64.png in Resources */,
 				A1C020F81AACFD21000DDCAF /* LaunchScreen.xib in Resources */,
 				A1C020F51AACFD21000DDCAF /* Images.xcassets in Resources */,
@@ -317,6 +342,7 @@
 				A1C021371AAD0B69000DDCAF /* help.png in Resources */,
 				A1C021381AAD0B69000DDCAF /* info.png in Resources */,
 				A1C0213B1AAD0B69000DDCAF /* news64x64.png in Resources */,
+				2D5B0C221AAD45C0007382FC /* tsunami1.png in Resources */,
 				A1C0213D1AAD0B69000DDCAF /* volcanotransparent 2.png in Resources */,
 				A1C0213E1AAD0B69000DDCAF /* volcanotransparent.png in Resources */,
 			);
@@ -337,6 +363,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C020F01AACFD21000DDCAF /* SecondViewController.m in Sources */,
+				2DE942A21AAD259E00964C87 /* manual.m in Sources */,
+				2DE942A51AAD2E7500964C87 /* description.m in Sources */,
 				A1C020EA1AACFD21000DDCAF /* AppDelegate.m in Sources */,
 				A1C020ED1AACFD21000DDCAF /* FirstViewController.m in Sources */,
 				A1C020E71AACFD21000DDCAF /* main.m in Sources */,

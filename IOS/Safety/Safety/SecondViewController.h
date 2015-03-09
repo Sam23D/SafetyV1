@@ -11,7 +11,9 @@
 NSInteger number;
 
 @interface SecondViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
-    NSMutableArray *guide;
+    NSMutableArray *emergency;
+    NSString *disaster;
+    NSArray *imagesName;
 }
 
 
